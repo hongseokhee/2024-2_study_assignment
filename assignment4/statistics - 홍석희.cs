@@ -23,8 +23,8 @@ namespace statistics
             // ---------- TODO ----------
             int subject_num = 3;
             int student_num = 5;
-            double[] subject_average = [0,0,0]; // 과목 개수에 따라 크기 조절해야됨
-            double[] max_min_arr = [0,0,0,0,0,0]; // 과목 개수에 따라 크기 조절해야됨
+            double[] subject_average = {0,0,0}; // 과목 개수에 따라 크기 조절해야됨
+            double[] max_min_arr = {0,0,0,0,0,0}; // 과목 개수에 따라 크기 조절해야됨
             // 평균, 최댓값 & 최솟값
             for (int i = 0; i < subject_num; i ++) {
                 double max = -1;
@@ -38,7 +38,7 @@ namespace statistics
                 max_min_arr[2*i +1] = min;
             }
             // 학생 total 순위
-            double[] student_total = [0,0,0,0,0]; // 학생 수에 따라 크기 조절해야됨
+            double[] student_total = {0,0,0,0,0}; // 학생 수에 따라 크기 조절해야됨
             for (int i = 0; i < student_num; i++) {
                 for (int j = 0; j < subject_num; j++) {
                     student_total[i] += double.Parse(data[i+1, j+2]);
