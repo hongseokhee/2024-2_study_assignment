@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     // Restart the game
     public void RestartGame()
     {
+        Debug.Log("Button Clicked");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
