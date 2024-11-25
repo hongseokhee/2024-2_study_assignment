@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
                 rowchange++;
             }
             GameObject ball = Instantiate(BallPrefab, StartPosition, StartRotation);
-            ball.name = $"ball_{i}";
+            ball.name = $"{i}";
             ball.GetComponent<MeshRenderer>().material = Resources.Load<Material>($"Materials/ball_{i}");
             StartPosition.x += BallRadius * 2;
         }
@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         // ForceMode.Impulse를 사용한다.
         // ---------- TODO ---------- 
         Rigidbody rb = PlayerBall.GetComponent<Rigidbody>();
-        Vector3 convert_pos = new Vector3(targetPos.x, 0, targetPos.z).normalized;
+        Vector3 convert_pos = new Vector3(targetPos.x - PlayerBall.transform.position.x, 0, targetPos.z - PlayerBall.transform.position.z).normalized;
         rb.AddForce(CalcPower(convert_pos) * convert_pos, ForceMode.Impulse);
         // -------------------- 
     }
